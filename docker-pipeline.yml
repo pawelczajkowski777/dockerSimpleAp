@@ -35,3 +35,13 @@ stages:
         tags: |
           $(Build.BuildId)
           latest
+- stage: DeploytoAKS
+
+  pool:
+    vmImage: ubuntu latest
+
+  jobs:
+  - job: DeploytoAKS
+    displayName: Deploy to AKS
+    steps:
+    
