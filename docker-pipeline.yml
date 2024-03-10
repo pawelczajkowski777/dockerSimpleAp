@@ -20,9 +20,6 @@ stages:
         tags: |
           $(Build.BuildId)
           latest
-            tags: |
-              $(Build.BuildId)
-              latest
 
     - task: Docker@2
       inputs:
