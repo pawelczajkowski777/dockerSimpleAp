@@ -6,7 +6,7 @@ stages:
     vmImage: ubuntu-latest
 
   jobs:
-  - job: BuildD0cker_SalesBookLB
+  - job: BuildDocker_SalesBookLB
     displayName: Build Docker Image for SalesBook.LB app
 
     steps:
@@ -29,7 +29,7 @@ stages:
         containerRegistry: 'conterinersregistrypc'
         repository: 'SalesBook.WEB'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '**/SalesBook.WEB/Dockerfile'
         tags: |
           $(Build.BuildId)
           latest
