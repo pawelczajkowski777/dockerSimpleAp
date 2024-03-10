@@ -21,6 +21,11 @@ stages:
           $(Build.BuildId)
           latest
 
+  - job: BuildDocker_SalesBookWEB
+    displayName: Build Docker Image for SalesBook.WEB app
+
+    steps:
+
     - task: Docker@2
       inputs:
         containerRegistry: 'conterinersregistrypc'
