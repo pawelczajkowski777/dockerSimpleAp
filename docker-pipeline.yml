@@ -13,8 +13,23 @@ stages:
 
     - task: Docker@2
       inputs:
+        containerRegistry: 'conterinersregistrypc'
+        repository: 'SalesBook.LB'
         command: 'buildAndPush'
         Dockerfile: '**/SalesBook.LB/Dockerfile'
+        tags: |
+          $(Build.BuildId)
+          latest
+            tags: |
+              $(Build.BuildId)
+              latest
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'conterinersregistrypc'
+        repository: 'SalesBook.WEB'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
         tags: |
           $(Build.BuildId)
           latest
